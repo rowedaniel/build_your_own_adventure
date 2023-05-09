@@ -1,0 +1,45 @@
+:root {
+  --part-bg: #e7e7e7;
+  --option-unselected-bg: #c8c8c8;
+  --option-selected-bg: #008CBA;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  background-color: var(--part-bg);
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.partHeader {
+  width: 100%;
+  margin: 20px 40px;
+  font-size: 14px;
+}
+
+.option {
+  width: 100%;
+
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 14px;
+
+  background-color: var(--option-unselected-bg);
+  color: black;
+}
+
+.option.selected {
+  background-color: var(--option-selected-bg);
+  color: white;
+}
