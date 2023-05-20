@@ -49,9 +49,12 @@ export const default_filler_leaf = {
   subbranches: {}
 };
 
+export const getpart_url = "https://build-your-own-adventure-backend.fly.dev/getpart?item_id="
+export const newpart_url = "https://build-your-own-adventure-backend.fly.dev/newpart"
+
 export function populateDefaultTree(setTree: (t: branch) => void) {
   const root_id = 1;
-  fetch("http://localhost:8000/getpart?item_id=" + root_id, {
+  fetch(getpart_url + root_id, {
           method: "GET",
           headers: {
               "Content-Type": "application/json"

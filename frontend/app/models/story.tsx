@@ -1,6 +1,6 @@
 import type { optiondata, partdata, branch, maindata } from "~/models/utils";
 
-import { default_filler_leaf } from "~/models/utils";
+import { default_filler_leaf, getpart_url, newpart_url  } from "~/models/utils";
 import { useState } from "react";
 
 interface option {
@@ -54,7 +54,7 @@ export function Story({ tree, setTree, currentHistory, setCurrentHistory }: main
   }
   function getBranch(leaf: branch, newHistory: number[]): void {
     let choice = newHistory[newHistory.length - 1];
-    fetch("http://localhost:8000/getpart?item_id=" + choice, {
+    fetch(getpart_url + choice, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -76,7 +76,7 @@ export function Story({ tree, setTree, currentHistory, setCurrentHistory }: main
   }
 
   function createNewPart(option: optiondata, content: newpartdata): void {
-    fetch("http://localhost:8000/newpart", {
+    fetch(newpart_url, {
             method: "POST",
             body: JSON.stringify(content),
             headers: {
