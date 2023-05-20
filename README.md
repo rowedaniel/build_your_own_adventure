@@ -51,3 +51,4 @@ rm -rf app
 # copy your app over
 cp -R ../my-old-remix-app/app app
 ```
+poetry export -f requirements.txt --without-hashes > requirements.txt

@@ -16,6 +16,7 @@ pymysql = "^1.0.3"
 cryptography = "^40.0.2"
 pydantic = "^1.10.7"
 orjson = "^3.8.12"
+psycopg2-binary = "^2.9.6"
 
 
 [tool.poetry.group.dev.dependencies]

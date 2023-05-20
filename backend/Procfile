@@ -1,0 +1,2 @@
+# Modify this Procfile to fit your needs
+web: python3 -m uvicorn build_your_own_adventure_api.main:app --host=0.0.0.0 --port=8080

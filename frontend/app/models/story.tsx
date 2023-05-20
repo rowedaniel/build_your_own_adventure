@@ -54,7 +54,7 @@ export function Story({ tree, setTree, currentHistory, setCurrentHistory }: main
   }
   function getBranch(leaf: branch, newHistory: number[]): void {
     let choice = newHistory[newHistory.length - 1];
-    fetch("http://131.191.25.178:8000/getpart?item_id=" + choice, {
+    fetch("http://localhost:8000/getpart?item_id=" + choice, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -76,7 +76,7 @@ export function Story({ tree, setTree, currentHistory, setCurrentHistory }: main
   }
 
   function createNewPart(option: optiondata, content: newpartdata): void {
-    fetch("http://131.191.25.178:8000/newpart", {
+    fetch("http://localhost:8000/newpart", {
             method: "POST",
             body: JSON.stringify(content),
             headers: {

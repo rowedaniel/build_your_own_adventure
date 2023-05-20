@@ -51,7 +51,7 @@ export const default_filler_leaf = {
 
 export function populateDefaultTree(setTree: (t: branch) => void) {
   const root_id = 1;
-  fetch("http://131.191.25.178:8000/getpart?item_id=" + root_id, {
+  fetch("http://localhost:8000/getpart?item_id=" + root_id, {
           method: "GET",
           headers: {
               "Content-Type": "application/json"

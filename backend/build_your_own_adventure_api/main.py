@@ -11,9 +11,7 @@ from .database import SessionLocal
 
 app = FastAPI(default_response_class=ORJSONResponse)
 
-origins = [
-    "*"
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -30,6 +28,11 @@ def get_db() -> Generator[Session, None, None]:
         yield db
     finally:
         db.close()
+
+
+@app.get("/healthcheck")
+async def health_check() -> dict[str, str]:
+    return {"status": "ok"}
 
 
 @app.get("/getpart", response_model=schemas.Part)
