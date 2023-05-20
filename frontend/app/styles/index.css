@@ -2,15 +2,39 @@
   --part-bg: #e7e7e7;
   --option-unselected-bg: #c8c8c8;
   --option-selected-bg: #008CBA;
+  --part-font-size: 18px;
+  --option-font-size: 16px;
+  --submit-bg: #6ad080;
+  --newoption-bg: #8080ad;
+  --deleteoption-bg: #ad8080;
 }
 
+/* main formatting */
+.switchStateButton {
+  top: 0;
+  left: 0;
+  border: none;
+  padding: 15px 30px;
+
+  cursor: pointer;
+  background-color: var(--submit-bg);
+
+  position: fixed;
+}
+
+body > div {
+}
+
+
+
+/* story formatting */
 .story {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.part {
+.story .part, .story .createPart {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,25 +45,111 @@
   margin-bottom: 10px;
 }
 
-.partHeader {
-  width: 100%;
+.story .part .partHeader {
+  width: 80%;
   margin: 20px 40px;
-  font-size: 14px;
+  font-size: var(--part-font-size);
 }
 
-.option {
+.story .part .option {
   width: 100%;
 
   border: none;
   padding: 15px 30px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--option-font-size);
 
   background-color: var(--option-unselected-bg);
   color: black;
 }
 
-.option.selected {
+.story .part .option.selected {
   background-color: var(--option-selected-bg);
   color: white;
+}
+
+.story .createPart .mainText {
+  width: 80%;
+  margin: 10px;
+  font-size: var(--part-font-size);
+}
+
+.story .createPart .submitButton {
+  width: 100%;
+
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: var(--option-font-size);
+  background-color: var(--submit-bg);
+  color: white;
+}
+
+.story .createPart .optionDiv {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.story .createPart .optionDiv .optionText{
+  font-size: var(--option-font-size);
+  width: 75%;
+}
+
+
+.story .createPart .newOptionButton, .story .createPart .optionDiv .deleteOptionButton {
+  width: 120px;
+
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: var(--option-font-size);
+
+}
+
+.story .createPart .newOptionButton {
+  background-color: var(--newoption-bg);
+  margin: 20px;
+}
+
+.story .createPart .optionDiv .deleteOptionButton {
+  background-color: var(--deleteoption-bg);
+}
+
+
+/* tree formatting */
+.treeContainer {
+  display: inline-block;
+  margin-top: 30px;
+  min-width: 100%;
+}
+.treeLayer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0 20px;
+}
+
+.node {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: var(--option-unselected-bg);
+}
+
+.node.selected {
+  background-color: var(--option-selected-bg);
+}
+
+.node.unexplored {
+  background-color: var(--deleteoption-bg);
 }
