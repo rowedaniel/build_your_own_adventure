@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Story } from "~/models/story";
 import { Tree } from "~/models/tree";
 import { SwitchStateButton, populateDefaultTree, state } from "~/models/utils";
-// import stylesUrl from "~/styles/index.css";
+import "~/styles/index.css";
 
 export default function Index() {
   const [currentState, setCurrentState] = useState<state>(state.story);
