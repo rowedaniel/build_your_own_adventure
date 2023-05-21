@@ -1,3 +1,5 @@
+'use client';
+
 export enum state {
   story,
   tree,

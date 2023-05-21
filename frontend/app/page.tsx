@@ -1,5 +1,4 @@
-import type { V2_MetaFunction } from "@remix-run/node";
-import type { LinksFunction } from "@remix-run/node";
+'use client';
 
 import type { branch, switchbutton } from "~/models/utils";
 
@@ -7,14 +6,7 @@ import { useState } from "react";
 import { Story } from "~/models/story";
 import { Tree } from "~/models/tree";
 import { SwitchStateButton, populateDefaultTree, state } from "~/models/utils";
-import stylesUrl from "~/styles/index.css";
-
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesUrl },
-];
-export const meta: V2_MetaFunction = () => {
-  return [{ title: "Build Your Own Adventure" }];
-};
+// import stylesUrl from "~/styles/index.css";
 
 export default function Index() {
   const [currentState, setCurrentState] = useState<state>(state.story);

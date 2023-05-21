@@ -1,3 +1,5 @@
+'use client';
+
 import type { maindata } from "~/models/utils";
 
 export function Tree({ tree, setTree, currentHistory, setCurrentHistory }: maindata ) {

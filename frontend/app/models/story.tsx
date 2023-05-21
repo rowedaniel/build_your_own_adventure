@@ -1,3 +1,5 @@
+'use client';
+
 import type { optiondata, partdata, branch, maindata } from "~/models/utils";
 
 import { default_filler_leaf, getpart_url, newpart_url  } from "~/models/utils";
