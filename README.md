@@ -1,54 +1,13 @@
-# Remix readme:
+# Build-your-own-adventure project
 
-- [Remix Docs](https://remix.run/docs)
+This is a small project I worked on to learn React and other modern development tools.
 
-## Development
+The goal is to create a website where people can contribute to an ever-expanding story.
+My vision is that it works like reading a choose-your-own-adventure, where at each point in the story you have a number of options, and each one branches off into a slightly different variation of the story.
+Expanding on that idea, users should be able to not only navigate through existing branching storylines, but also contribute to new ones.
 
-From your terminal:
+## Architecture
 
-```sh
-npm run dev
-```
-
-This starts your app in development mode, rebuilding assets on file changes.
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
-poetry export -f requirements.txt --without-hashes > requirements.txt
+The frontend (under frontend/) is built using React. I plan on deploying to GitHub pages soon.
+The backend is a relatively simple api written in python using FastAPI, using SQLAlchemy and alembic to talk to the database.
+Dependancies are visible in backend/pyproject.toml.
